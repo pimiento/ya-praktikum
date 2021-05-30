@@ -1,0 +1,17 @@
+<html>
+    <head>
+        <title>Hello World!</title>
+    </head>
+    <body>
+        {% if result  %}
+        <p>
+            {{ result|safe }}
+        </p>
+        {% endif  %}
+        <form method="POST" action="/" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ upload_form.as_p }}
+            <input type="submit" value="Отправить"/>
+        </form>
+    </body>
+</html>
